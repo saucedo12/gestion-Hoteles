@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width = device-width, initial-scale=1"  charset="utf-8" />
+	<title>Evaluación Final - jQuery Mobile</title>
+	<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css" />
+	<style type="text/css">
+		#page2,
+		#dvMap, 
+		#dvMap2 {
+			width: 100%;
+			height: 200px;
+			padding: 0
+		}
+	</style>
+	<script src="js/external/jquery/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.5.js"></script>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlKW8nwBhm1X8BTPr7Q6TLpHuOBrFwiu4&signed_in=true""></script>
+	<script src="js/app.js">
+	</script>
+</head>
+<body>
+	<div data-role="page" id="page1">
+		<div data-role="header"><h2>Gestión Hotel</h2></div>
+		<div data-role="content" class="ui-content">
+			<a id="btnRegistrar" data-role="button">Registrar Hotel</a>
+			<a id="btnPage3" data-role="button">Lista Hoteles</a>
+		</div>
+		<div data-role="footer"><h2>Gestión Hotel</h2></div>
+	</div>
+	
+	<div data-role="page" id="page2">
+		<div data-role="header"><h2>Registro de Hotel</h2></div>
+		<div data-role="content" class="ui-content">
+			<label for="txtNombre">Nombre:</label><input type="text" id="txtNombre" name="txtNombre"  required >
+			<hr />
+			<label>Ubicación:</label>
+			<div id="dvMap">
+			
+			</div>
+			<label for="txtCiudad">Ciudad:</label><input type="text" id="txtCiudad" name="txtCiudad" required >
+			<hr />
+			<label for="txtTelefono">Teléfono:</label><input type="text" id="txtTelefono" name="txtTelefono" >
+			<hr/>
+			<label for="txtEstrellas">Estrellas:</label><input type="number" id="txtEstrellas" name="txtEstrellas"  required min="1" max="5">
+			<hr/>		
+			<a id="btnCrear" data-role="button">Registrar Hotel</a>
+			<a id="btnPage1" data-role="button">Volver</a>
+		</div>
+		<div data-role="footer">Registro de Hotel</div>
+	</div>
+	
+	<div data-role="page" id="page3">
+		<div data-role="header"><h2>Lista Hoteles</h2></div>
+		<div data-role="content" class="ui-content">
+			<ul data-role="listview" id="ulHotels">
+			</ul>
+		</div>
+		<a id="btnPage1b" data-role="button">Volver</a>
+	</div>
+	
+	<div data-role="page" id="pgHotel">
+		<div data-role="header"><h2>Datos Hotel</h2></div>
+		<div data-role="content" class="ui-content">
+			<strong>Nombre:</strong>&nbsp;<span id="lblNombre">[nombre]</span><br />
+			<strong>Ciudad:</strong>&nbsp;<span id="lblCiudad">[ciudad]</span><br />
+			<strong>Teléfono:</strong>&nbsp;<span id="lblTelefono">[telefono]</span><br />
+			<strong>Estrellas:</strong>&nbsp;<span id="lblEstrellas">[estrellas]</span><br />
+			<strong>Ubicación:</strong>
+			<div id="dvMap2">
+			
+			</div>
+			<a id="btnDelete" data-role="button" class="ui-btn ui-btn-b ui-icon-delete ui-btn-icon-left">Eliminar Hotel</a>
+			<a id="btnPage3a" data-role="button">Lista Hoteles</a>
+			<a id="btnPage1c" data-role="button">Volver al Inicio</a>
+		</div>
+	</div>
+</body>
+</html>
